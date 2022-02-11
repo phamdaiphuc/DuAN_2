@@ -12,16 +12,16 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           elevation: 0,
           leading: IconButton(
-            icon: SvgPicture.asset("assets/icons/back-svgrepo-com.svg"),
+            icon: SvgPicture.asset("assets/icons/back.svg"),
             onPressed: null,
           ),
           actions: <Widget>[
             IconButton(
-              icon: SvgPicture.asset("assets/icons/search-svgrepo-com.svg"),
+              icon: SvgPicture.asset("assets/icons/search.svg"),
               onPressed: null,
             ),
             IconButton(
-              icon: SvgPicture.asset("assets/icons/home-svgrepo-com.svg"),
+              icon: SvgPicture.asset("assets/icons/cart.svg"),
               onPressed: null,
             ),
             SizedBox(width: kDefaultPaddin / 2),

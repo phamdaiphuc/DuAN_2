@@ -11,19 +11,34 @@ class Body extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-        SizedBox(
-          height: size.height,
-          child: Stack(
-            children:[
-              Container(
-                height:500,
-                decoration: BoxDecoration(
-                  color: Colors.white,
+          
+          Container(
+            height: size.height, 
+            child: Stack(
+              children:[
+                Container(
+                  margin: EdgeInsets.only(top: 120.0),
+                  height:500,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                  ),
                 ),
-              )
-            ],
+                    Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text('xin chao\n',style: TextStyle(color: Colors.white),
+                      ),
+                      Text(product.title,style: TextStyle(color: Colors.white),
+                      ),
+        
+                       ],
+            ),
           ),
-        ),
+              ],
+            ),
+          ),
         ],
       ),
     );

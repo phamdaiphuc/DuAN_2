@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:app_new/constants.dart';
+import 'package:app_new/network/http_api.dart';
+import 'package:app_new/models/Product2.dart';
 
 class Categories extends StatefulWidget {
+  
+
   @override
   _CategoriesState createState() => _CategoriesState();
 }
@@ -9,6 +13,7 @@ class Categories extends StatefulWidget {
 class _CategoriesState extends State<Categories> {
   List<String> categories = ['Hand Bag', 'Jewellery', 'Footwear', 'Dresses'];
   int selectedIndex = 0;
+  
   @override
   Widget build(BuildContext context) {
     return Padding(

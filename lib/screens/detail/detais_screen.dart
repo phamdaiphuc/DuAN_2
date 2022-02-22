@@ -4,6 +4,8 @@ import 'package:flutter_svg/svg.dart';
 
 import 'package:app_new/screens/detail/components/body.dart';
 
+
+
 class DetailsScreen extends StatelessWidget {
   final Product product;
   const DetailsScreen({Key? key, required this.product}) : super(key: key);

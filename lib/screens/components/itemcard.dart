@@ -22,7 +22,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
    
     return GestureDetector(
-      onTap: press,
+      // onTap: press,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

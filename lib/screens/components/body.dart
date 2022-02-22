@@ -1,4 +1,5 @@
 import 'package:app_new/network/http_api.dart';
+
 import 'package:flutter/material.dart';
 import 'package:app_new/constants.dart';
 import 'package:app_new/models/Product2.dart';
@@ -75,7 +76,8 @@ class _body extends State<Body> {
       //   ),
       // ),
       Expanded(
-        child: Padding(  padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+          child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
         child: FutureBuilder<List<Product>>(
           future: listFuture,
           builder: (context, future) {
@@ -91,29 +93,26 @@ class _body extends State<Body> {
                   ),
                   itemBuilder: (context, index) {
                     return ItemCard(
-                         press: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: ((context) => DetailsScreen(
-                                   product: listProduct[index])))),
-                        colorl:listProduct[index].color,
+                        //  press: () => Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: ((context) => DetailsScreen(
+                        //            product: listProduct[index])))),
+                        colorl: listProduct[index].color,
                         image: listProduct[index].image,
                         title: listProduct[index].title,
-                   
-                        price: listProduct[index].price);
+                        price: listProduct[index].price,
+                        press: () {});
                   });
             } else {
               return Container(
-                child: Column(
-                  children: [Text('noData')],
-                )
-                );
+                  child: Column(
+                children: [Text('noData')],
+              ));
             }
           },
         ),
-      )
-    )]);
+      ))
+    ]);
   }
 }
-
-// chung ta can statefullwidget cho phan the loai

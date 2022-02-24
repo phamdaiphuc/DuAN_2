@@ -46,8 +46,9 @@ class _BodyState extends State<Body> {
                   if (future.hasData) {
                     listproduct = future.data!;
                     return GridView.builder(
-                      itemCount: listproduct.length,
-                        gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
+                        itemCount: listproduct.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           mainAxisSpacing: kDefaultPaddin,
                           crossAxisSpacing: kDefaultPaddin,

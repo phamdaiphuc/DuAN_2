@@ -6,12 +6,11 @@ import 'package:app_new/screens/detail/components/body.dart';
 import 'package:string_to_hex/string_to_hex.dart';
 
 class DetailsScreen extends StatefulWidget {
-
-  final String? color_a;
-  const DetailsScreen({Key? key,
-  
-   required this.color_a,
-   }) : super(key: key);
+  final product p;
+  const DetailsScreen({
+    Key? key,
+    required this.p,
+  }) : super(key: key);
 
   @override
   State<DetailsScreen> createState() => _DetailsScreenState();
@@ -21,15 +20,16 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(StringToHex.toColor('color_a')),
+      backgroundColor: Color(StringToHex.toColor(widget.p.color)),
       appBar: appbar(context),
-      // body: Body(product: product),
+      body: 
+      Body(id:widget.p),
     );
   }
 
   AppBar appbar(BuildContext context) {
     return AppBar(
-      backgroundColor: Color(StringToHex.toColor(' color_a')),
+      backgroundColor: Color(StringToHex.toColor(widget.p.color)),
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(

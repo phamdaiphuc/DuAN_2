@@ -63,7 +63,7 @@ class _BodyState extends State<Body> {
                        context,
                         MaterialPageRoute(
                           builder: (context) => DetailsScreen(
-                          color_a: listproduct[index].color,
+                          p: listproduct[index],
                           ),
                         )),
                             ));

@@ -2,7 +2,7 @@
 
 import 'package:meta/meta.dart';
 import 'dart:convert';
-
+//dùng để chuyển json thành danh sách list 
  List<product> productFromJson(String str) => List<product>.from(json.decode(str).map((x) => product.fromJson(x)));
 
  String productToJson(List<product> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));

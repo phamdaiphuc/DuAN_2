@@ -59,6 +59,13 @@ class _BodyState extends State<Body> {
                               colorss: listproduct[index].color,
                               image: listproduct[index].image,
                               price: listproduct[index].price,
+                               press: () => Navigator.push(
+                       context,
+                        MaterialPageRoute(
+                          builder: (context) => DetailsScreen(
+                          color_a: listproduct[index].color,
+                          ),
+                        )),
                             ));
                   } else {
                     return Container(

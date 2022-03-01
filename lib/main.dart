@@ -1,3 +1,5 @@
+import 'package:app_new/Test_alert/MyHomePage.dart';
+import 'package:app_new/screens/Login/body.dart';
 import 'package:flutter/material.dart';
 import 'package:app_new/screens/home/home_screen.dart';
 import 'package:app_new/constants.dart';
@@ -16,6 +18,12 @@ class MyApp extends StatelessWidget {
             textTheme:
                 Theme.of(context).textTheme.apply(bodyColor: kTextColor),
             visualDensity: VisualDensity.adaptivePlatformDensity),
-        home: HomeScreen());
+        home: HomeScreen()
+        
+    // home: LoginScreen(),       
+    // home:MyHomePage(),
+        
+        
+        );
   }
 }

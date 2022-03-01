@@ -1,3 +1,4 @@
+import 'package:app_new/screens/components/addItem.dart';
 import 'package:flutter/material.dart';
 import 'package:app_new/constants.dart';
 import 'package:app_new/screens/detail/detais_screen.dart';
@@ -6,6 +7,7 @@ import '../../models/Product2.dart';
 import 'itemcard.dart';
 import 'categories.dart';
 import 'package:http/http.dart';
+import 'package:app_new/screens/components/addItem.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -59,13 +61,13 @@ class _BodyState extends State<Body> {
                               colorss: listproduct[index].color,
                               image: listproduct[index].image,
                               price: listproduct[index].price,
-                               press: () => Navigator.push(
-                       context,
-                        MaterialPageRoute(
-                          builder: (context) => DetailsScreen(
-                          p: listproduct[index],
-                          ),
-                        )),
+                              press: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DetailsScreen(
+                                      p: listproduct[index],
+                                    ),
+                                  )),
                             ));
                   } else {
                     return Container(
@@ -74,33 +76,55 @@ class _BodyState extends State<Body> {
                   }
                 })),
       ),
-      // Expanded(
-      //   child: Padding(
-      //     padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
-      //     child: GridView.builder(
-      //         itemCount: listproduct.length,
-      //         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-      //           crossAxisCount: 2,
-      //           mainAxisSpacing: kDefaultPaddin,
-      //           crossAxisSpacing: kDefaultPaddin,
-      //           childAspectRatio: 0.75,
-      //         ),
-      //         itemBuilder: (context, index) => ItemCard(
-      //               product: products[index],
-      //               press: () => Navigator.push(
-      //                   context,
-      //                   MaterialPageRoute(
-      //                     builder: (context) => DetailsScreen(
-      //                       product: products[index],
-      //                     ),
-      //                   )),
-      //             )),
-      //   ),
-      // ),
+      //phan nay icon add them du lieu vao api
+      Stack(children: [
+        Positioned(
+            child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+                padding: EdgeInsets.symmetric(vertical: kDefaultPaddin),
+                color: Colors.yellow,
+                child: Row(
+                  children: <Widget>[
+                    IconButton(
+                      onPressed: () => {
+
+                      Navigator.push(context,  MaterialPageRoute(builder: (context) => addItem()),)
+                      },
+                      icon: Icon(Icons.add),
+                    ),
+                  ],
+                )),
+          ),
+        )),
+
+        // Expanded(
+        //   child: Padding(
+        //     padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+        //     child: GridView.builder(
+        //         itemCount: listproduct.length,
+        //         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        //           crossAxisCount: 2,
+        //           mainAxisSpacing: kDefaultPaddin,
+        //           crossAxisSpacing: kDefaultPaddin,
+        //           childAspectRatio: 0.75,
+        //         ),
+        //         itemBuilder: (context, index) => ItemCard(
+        //               product: products[index],
+        //               press: () => Navigator.push(
+        //                   context,
+        //                   MaterialPageRoute(
+        //                     builder: (context) => DetailsScreen(
+        //                       product: products[index],
+        //                     ),
+        //                   )),
+        //             )),
+        //   ),
+        // ),
+      ])
     ]);
   }
 }
 
 // chung ta can statefullwidget cho phan the loai
-
-
